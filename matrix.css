@@ -1,4 +1,17 @@
 .dimension {
   display: flex;
   gap: 2rem;
+  align-items: center;
+}
+
+#rows {
+  height: 1rem;
+}
+
+#columns {
+  height: 1rem;
+}
+
+#root {
+  border: 1px solid black;
 }
