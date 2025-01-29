@@ -9,13 +9,19 @@
 </head>
 
 <body>
-    <h1>Matrix Calculation</h1>
+    <div class="title">
+        <h1>Matrix Calculation</h1>
+    </div>
     <form id="input">
         <div class="dimension">
-            <p>Enter the number of rows </p>
-            <input type="number" min="1" max="10" id="rows">
-            <p>Enter the number of columns</p>
-            <input type="number" min="1" max="10" id="columns">
+            <div class="row-input">
+                <p>Enter the number of rows </p>
+                <input type="number" min="1" max="10" id="rows">
+            </div>
+            <div class="col-input">
+                <p>Enter the number of columns</p>
+                <input type="number" min="1" max="10" id="columns">
+            </div>
         </div>
         <!-- <input type="submit" value="Submit"> -->
     </form>

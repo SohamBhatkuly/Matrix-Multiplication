@@ -25,9 +25,11 @@ form.addEventListener('input', (event) => {
         root.style.columnGap = `1px`;
         root.style.width = "max-content";
         root.style.maxWidth = "900px";
-        root.style.border = "1px solid black";
+        // root.style.border = "1px solid black";
         root.style.borderRadius = "0.5rem";
         root.style.padding = "0.2rem";
+        root.style.backgroundColor = "#8BB9A0"
+        root.style.margin = "1rem";
     }
 
     // root.style.border= "1px solid black"
@@ -40,10 +42,13 @@ form.addEventListener('input', (event) => {
         let colEntry = document.createElement('input');
             colEntry.setAttribute('id', `${i}-${j}`);
             colEntry.setAttribute('type', 'number');
+            colEntry.setAttribute('class', 'cells');
+            colEntry.style.backgroundColor = "#E3F6EC";
           //  colEntry.innerHTML = `<input type="number" class="input-values" id="${i}-${j}"></input>`
-            colEntry.style.border = "1px solid black";
+            // colEntry.style.border = "1px solid black";
             colEntry.style.margin = '2px';
             colEntry.style.borderRadius = "0.1rem"
+            colEntry.style.outline = "none";
             root.appendChild(colEntry);
         }
         // root.appendChild(rowEntry);
