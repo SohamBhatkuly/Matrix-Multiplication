@@ -1,16 +1,18 @@
 let form = document.getElementById('input');
-
+let rows;
+let columns;
 form.addEventListener('input', (event) => {
     event.preventDefault();
-    let rows = document.getElementById('rows').value;
-    let columns = document.getElementById('columns').value;
+    rows = document.getElementById('rows').value;
+    columns = document.getElementById('columns').value;
+    let displayGrid = document.querySelector('.display-grid');
     console.log(rows, columns);
     let root = document.getElementById('root');
     if (root) {
         root.innerHTML = ``;
     }
     else {
-        root = document.createElement('div');
+        root = document.createElement('form');
         root.setAttribute('id', 'root');
         root.innerHTML = ``;
         root.setAttribute('class', 'root');
@@ -36,7 +38,7 @@ form.addEventListener('input', (event) => {
         // rowEntry.setAttribute('id', `${i}`);
         for (let j = 0; j < columns; j++){
         let colEntry = document.createElement('div');
-            colEntry.setAttribute('id', `${i+j}`);
+            colEntry.setAttribute('id', `${i}-${j}`);
             colEntry.innerHTML = `<input type="number" class="input-values"></input>`
             colEntry.style.border = "1px solid black";
             colEntry.style.margin = '2px';
@@ -45,5 +47,41 @@ form.addEventListener('input', (event) => {
         }
         // root.appendChild(rowEntry);
     }
-    document.body.appendChild(root);
+
+
+    displayGrid.append(root);
 })
+
+let multiply = () => {
+    let arr1 = [];
+    for (let i = 0; i < rows; i++){
+              arr1[i] = []; 
+        for (let j = 0; j < columns; j++){
+            arr1[i][j] = parseFloat(document.getElementById(`${i}-${j}`).value);
+        }
+    }
+    for (i = 0; i < rows; i++){
+
+        for (j = 0; j < columns; j++){
+            console.log(arr1[i][j]);
+        }
+    }
+
+}
+
+let checkInp = () => {
+    let submitbutton = document.querySelector('.submit-button');
+let inp = document.querySelectorAll('.input-values');
+    // console.log(inp)
+    // console.log('Input values:', Array.from(inp).map(input => input.value)); 
+    submitbutton.classList.toggle("active", Array.from(inp).every((input) => {
+        return input.value.trim() !== "";
+    }));
+
+    if (submitbutton.classList.contains("active")) {
+        multiply();
+    } else {
+        alert('Enter all values');
+    }
+};
+
