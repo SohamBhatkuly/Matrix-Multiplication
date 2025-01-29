@@ -37,9 +37,10 @@ form.addEventListener('input', (event) => {
         // let rowEntry = document.createElement('div');
         // rowEntry.setAttribute('id', `${i}`);
         for (let j = 0; j < columns; j++){
-        let colEntry = document.createElement('div');
+        let colEntry = document.createElement('input');
             colEntry.setAttribute('id', `${i}-${j}`);
-            colEntry.innerHTML = `<input type="number" class="input-values"></input>`
+            colEntry.setAttribute('type', 'number');
+          //  colEntry.innerHTML = `<input type="number" class="input-values" id="${i}-${j}"></input>`
             colEntry.style.border = "1px solid black";
             colEntry.style.margin = '2px';
             colEntry.style.borderRadius = "0.1rem"
@@ -53,19 +54,21 @@ form.addEventListener('input', (event) => {
 })
 
 let multiply = () => {
+    // let val = document.getElementsByClassName('input-values').value;
+    // console.log(Array.from(val));
     let arr1 = [];
     for (let i = 0; i < rows; i++){
               arr1[i] = []; 
         for (let j = 0; j < columns; j++){
             arr1[i][j] = parseFloat(document.getElementById(`${i}-${j}`).value);
-        }
-    }
-    for (i = 0; i < rows; i++){
-
-        for (j = 0; j < columns; j++){
             console.log(arr1[i][j]);
         }
     }
+    // for (i = 0; i < rows; i++){
+    //     for (j = 0; j < columns; j++){
+    //         console.log(arr1[i][j]);
+    //     }
+    // }
 
 }
 
