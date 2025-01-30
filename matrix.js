@@ -1,6 +1,12 @@
 let form = document.getElementById('input');
 let rows;
 let columns;
+let rows2;
+let columns2;
+let arr1 = [];
+let form2 = document.getElementById('input');
+
+
 form.addEventListener('input', (event) => {
     event.preventDefault();
     rows = document.getElementById('rows').value;
@@ -18,7 +24,7 @@ form.addEventListener('input', (event) => {
         root.setAttribute('class', 'root');
     }
 
-    if (rows && columns) {
+    if (rows>0 && columns>0) {
         root.style.display = "grid";
         root.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
         root.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
@@ -28,8 +34,9 @@ form.addEventListener('input', (event) => {
         // root.style.border = "1px solid black";
         root.style.borderRadius = "0.5rem";
         root.style.padding = "0.2rem";
-        root.style.backgroundColor = "#8BB9A0"
+        root.style.backgroundColor = "#E0E0E0 "
         root.style.margin = "1rem";
+        // root.style.color="  color: #2c3e50"
     }
 
     // root.style.border= "1px solid black"
@@ -43,12 +50,13 @@ form.addEventListener('input', (event) => {
             colEntry.setAttribute('id', `${i}-${j}`);
             colEntry.setAttribute('type', 'number');
             colEntry.setAttribute('class', 'cells');
-            colEntry.style.backgroundColor = "#E3F6EC";
+            colEntry.style.backgroundColor = "#FFFFFF ";
           //  colEntry.innerHTML = `<input type="number" class="input-values" id="${i}-${j}"></input>`
             // colEntry.style.border = "1px solid black";
             colEntry.style.margin = '2px';
             colEntry.style.borderRadius = "0.1rem"
             colEntry.style.outline = "none";
+            colEntry.style.color="#2c3e50"
             root.appendChild(colEntry);
         }
         // root.appendChild(rowEntry);
@@ -61,7 +69,6 @@ form.addEventListener('input', (event) => {
 let multiply = () => {
     // let val = document.getElementsByClassName('input-values').value;
     // console.log(Array.from(val));
-    let arr1 = [];
     for (let i = 0; i < rows; i++){
               arr1[i] = []; 
         for (let j = 0; j < columns; j++){
@@ -69,11 +76,6 @@ let multiply = () => {
             console.log(arr1[i][j]);
         }
     }
-    // for (i = 0; i < rows; i++){
-    //     for (j = 0; j < columns; j++){
-    //         console.log(arr1[i][j]);
-    //     }
-    // }
 
 }
 
