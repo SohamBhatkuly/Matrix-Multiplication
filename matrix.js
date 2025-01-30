@@ -4,8 +4,9 @@ let columns;
 let rows2;
 let columns2;
 let arr1 = [];
+let arr2 = [];
 let form2 = document.getElementById('input2');
-
+let arr3 = [];
 
 form.addEventListener('input', (event) => {
     event.preventDefault();
@@ -108,9 +109,9 @@ form2.addEventListener('input', (event) => {
         // rowEntry.setAttribute('id', `${i}`);
         for (let j = 0; j < columns2; j++){
         let colEntry2 = document.createElement('input');
-            colEntry2.setAttribute('id', `${i}-${j}`);
+            colEntry2.setAttribute('id', `${i}-${j}-2`);
             colEntry2.setAttribute('type', 'number');
-            colEntry2.setAttribute('class', 'cells2');
+            colEntry2.setAttribute('class', 'cells');
             colEntry2.style.backgroundColor = "#FFFFFF ";
           //  colEntry.innerHTML = `<input type="number" class="input-values" id="${i}-${j}"></input>`
             // colEntry.style.border = "1px solid black";
@@ -127,6 +128,22 @@ form2.addEventListener('input', (event) => {
 
 
 let multiply = () => {
+
+        for (let i = 0; i < rows; i++) {
+                    arr3[i] = [];
+            for (let j = 0; j < columns2; j++) {
+                arr3[i][j] = 0;
+                    for (let k = 0; k < columns; k++) {
+                arr3[i][j] += arr1[i][k] * arr2[k][j];
+            }
+        }
+    }
+
+    let bodyDisplay = document.querySelector('.body-display');
+
+    console.log(arr3);
+}
+let matrixInput = () => {
     // let val = document.getElementsByClassName('input-values').value;
     // console.log(Array.from(val));
     for (let i = 0; i < rows; i++){
@@ -137,19 +154,37 @@ let multiply = () => {
         }
     }
 
+        for (let i = 0; i < rows2; i++){
+              arr2[i] = []; 
+        for (let j = 0; j < columns2; j++){
+            arr2[i][j] = parseFloat(document.getElementById(`${i}-${j}-2`).value);
+            console.log(arr2[i][j]);
+        }
+    }
+
+    multiply();
+
 }
 
 let checkInp = () => {
+    
+    if (columns != rows2) {
+        alert('Provide matrices of proper order to multiply');
+        return;
+    }
+
+
     let submitbutton = document.querySelector('.submit-button');
-let inp = document.querySelectorAll('.input-values');
+    let inp = document.querySelectorAll('.cells');
     // console.log(inp)
     // console.log('Input values:', Array.from(inp).map(input => input.value)); 
     submitbutton.classList.toggle("active", Array.from(inp).every((input) => {
         return input.value.trim() !== "";
     }));
 
+
     if (submitbutton.classList.contains("active")) {
-        multiply();
+        matrixInput();
     } else {
         alert('Enter all values');
     }
