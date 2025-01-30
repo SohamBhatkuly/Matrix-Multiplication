@@ -4,7 +4,7 @@ let columns;
 let rows2;
 let columns2;
 let arr1 = [];
-let form2 = document.getElementById('input');
+let form2 = document.getElementById('input2');
 
 
 form.addEventListener('input', (event) => {
@@ -12,7 +12,7 @@ form.addEventListener('input', (event) => {
     rows = document.getElementById('rows').value;
     columns = document.getElementById('columns').value;
     let displayGrid = document.querySelector('.display-grid');
-    console.log(rows, columns);
+    // console.log(rows, columns);
     let root = document.getElementById('root');
     if (root) {
         root.innerHTML = ``;
@@ -65,6 +65,66 @@ form.addEventListener('input', (event) => {
 
     displayGrid.append(root);
 })
+
+
+
+form2.addEventListener('input', (event) => {
+    event.preventDefault();
+    rows2 = document.getElementById('rows2').value;
+    columns2 = document.getElementById('columns2').value;
+    let displayGrid2 = document.querySelector('.display-grid2');
+    // console.log(rows, columns);
+    let root2 = document.getElementById('root2');
+    if (root2) {
+        root2.innerHTML = ``;
+    }
+    else {
+        root2 = document.createElement('form');
+        root2.setAttribute('id', 'root2');
+        root2.innerHTML = ``;
+        root2.setAttribute('class', 'root2');
+    }
+
+    if (rows2>0 && columns2>0) {
+        root2.style.display = "grid";
+        root2.style.gridTemplateColumns = `repeat(${columns2}, 1fr)`;
+        root2.style.gridTemplateRows = `repeat(${rows2}, 1fr)`;
+        root2.style.columnGap = `1px`;
+        root2.style.width = "max-content";
+        root2.style.maxWidth = "900px";
+        // root.style.border = "1px solid black";
+        root2.style.borderRadius = "0.5rem";
+        root2.style.padding = "0.2rem";
+        root2.style.backgroundColor = "#E0E0E0 "
+        root2.style.margin = "1rem";
+        // root.style.color="  color: #2c3e50"
+    }
+
+    // root.style.border= "1px solid black"
+   
+
+    for (let i = 0; i < rows2; i++){
+        // let rowEntry = document.createElement('div');
+        // rowEntry.setAttribute('id', `${i}`);
+        for (let j = 0; j < columns2; j++){
+        let colEntry2 = document.createElement('input');
+            colEntry2.setAttribute('id', `${i}-${j}`);
+            colEntry2.setAttribute('type', 'number');
+            colEntry2.setAttribute('class', 'cells2');
+            colEntry2.style.backgroundColor = "#FFFFFF ";
+          //  colEntry.innerHTML = `<input type="number" class="input-values" id="${i}-${j}"></input>`
+            // colEntry.style.border = "1px solid black";
+            colEntry2.style.margin = '2px';
+            colEntry2.style.borderRadius = "0.1rem"
+            colEntry2.style.outline = "none";
+            colEntry2.style.color="#2c3e50"
+            root2.appendChild(colEntry2);
+        }
+        // root.appendChild(rowEntry);
+    }
+    displayGrid2.append(root2);
+})
+
 
 let multiply = () => {
     // let val = document.getElementsByClassName('input-values').value;
