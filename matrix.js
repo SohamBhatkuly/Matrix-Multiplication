@@ -139,7 +139,15 @@ let multiply = () => {
         }
     }
 
-    let bodyDisplay = document.querySelector('.body-display');
+    let bodyDisplay2 = document.querySelector('.body-display');
+    bodyDisplay2.innerHTML = ``;
+    bodyDisplay2.style.flexDirection = "column";
+    let mul = document.createElement('div');
+    mul.innerHTML = "<h2>Multiplication Result</h2>";
+    mul.style.justifyContent = "start";
+    mul.style
+    bodyDisplay2.appendChild(mul);
+
     let result = document.createElement('div');
     result.style.display = "grid";
         result.style.gridTemplateColumns = `repeat(${columns2}, 1fr)`;
@@ -147,11 +155,10 @@ let multiply = () => {
         result.style.columnGap = `1px`;
         result.style.width = "max-content";
         result.style.maxWidth = "900px";
-        result.style.border = "1px solid black";
         result.style.borderRadius = "0.5rem";
         result.style.padding = "0.2rem";
         result.style.backgroundColor = "#E0E0E0 "
-        result.style.margin = "1rem";
+    result.style.margin = "1rem";
     
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < columns2; j++) {
@@ -166,12 +173,15 @@ let multiply = () => {
             colEntry3.style.borderRadius = "0.1rem"
             colEntry3.style.outline = "none";
             colEntry3.style.color = "#2c3e50"
+            colEntry3.style.width = "3rem";
             colEntry3.innerText = `${arr3[i][j]}`
             result.appendChild(colEntry3);
+            colEntry3.style.textAlign = "center";
         }
     }
-    bodyDisplay.innerHTML = result.innerHTML;
-    bodyDisplay.classList('res');
+    //  bodyDisplay2.innerHTML = ""; // Clear previous content
+    bodyDisplay2.appendChild(result);
+    bodyDisplay2.classList.add('res');
 }
 let matrixInput = () => {
     // let val = document.getElementsByClassName('input-values').value;
