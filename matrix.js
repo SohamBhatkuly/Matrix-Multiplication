@@ -36,7 +36,7 @@ form.addEventListener('input', (event) => {
         root.style.borderRadius = "0.5rem";
         root.style.padding = "0.2rem";
         root.style.backgroundColor = "#E0E0E0 "
-        root.style.margin = "1rem";
+        root.style.marginBottom = "1rem";
         // root.style.color="  color: #2c3e50"
     }
 
@@ -97,7 +97,7 @@ form2.addEventListener('input', (event) => {
         root2.style.borderRadius = "0.5rem";
         root2.style.padding = "0.2rem";
         root2.style.backgroundColor = "#E0E0E0 "
-        root2.style.margin = "1rem";
+        root2.style.marginBottom = "1rem";
         // root.style.color="  color: #2c3e50"
     }
 

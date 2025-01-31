@@ -9,49 +9,53 @@
 </head>
 
 <body>
-    
-    <div class="title">
-        <h1>Matrix Calculation</h1>
-    </div>
-    <div class="body-display" id="body-display">
-    <form id="input">
-        <div class="dimension">
-            <div class="row-input">
-                <p>Enter the number of rows </p>
-                <input type="number" min="1" max="10" id="rows">
-            </div>
-            <div class="col-input">
-                <p>Enter the number of columns</p>
-                <input type="number" min="1" max="10" id="columns">
-            </div>
+    <div class="c">
+        <div class="title">
+            <h1>Matrix Calculation</h1>
         </div>
-        <!-- <input type="submit" value="Submit"> -->
-    </form>
-
-    <div class="display-grid"></div>
-
-        <form id="input2">
-            <div class="dimension2">
-                <div class="row-input2">
-                    <p>Enter the number of rows </p>
-                    <input type="number" min="1" max="10" id="rows2">
+        <div class="body-display" id="body-display">
+            <form id="input">
+                <div class="dimension">
+                    <div class="row-input">
+                        <p>Enter the number of rows </p>
+                        <input type="number" min="1" max="10" id="rows">
+                    </div>
+                    <div class="col-input">
+                        <p>Enter the number of columns</p>
+                        <input type="number" min="1" max="10" id="columns">
+                    </div>
                 </div>
+                <!-- <input type="submit" value="Submit"> -->
+            </form>
 
-                <div class="col-input2">
-                    <p>Enter the number of columns</p>
-                    <input type="number" min="1" max="10" id="columns2">
+            <div class="display-grid"></div>
+
+            <form id="input2">
+                <div class="dimension2">
+                    <div class="row-input2">
+                        <p>Enter the number of rows </p>
+                        <input type="number" min="1" max="10" id="rows2">
+                    </div>
+
+                    <div class="col-input2">
+                        <p>Enter the number of columns</p>
+                        <input type="number" min="1" max="10" id="columns2">
+                    </div>
                 </div>
-            </div>
-            <!-- <input type="submit" value="Submit"> -->
-        </form>
+                <!-- <input type="submit" value="Submit"> -->
+            </form>
 
 
-    <div class="display-grid2"></div>
+            <div class="display-grid2"></div>
+            <br>
+            <button class="submit-button" onclick="checkInp()">Calculate</button>
+        </div>
 
-    <button class="submit-button" onclick="checkInp()">Calculate</button>
+        <script src="matrix.js"></script>
+        <footer class="footer">
+
+        </footer>
     </div>
-
-    <script src="matrix.js"></script>
 </body>
 
 </html>
