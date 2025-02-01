@@ -212,8 +212,6 @@ let checkInp = () => {
         alert('Provide matrices of proper order to multiply');
         return;
     }
-
-
     let submitbutton = document.querySelector('.submit-button');
     let inp = document.querySelectorAll('.cells');
     // console.log(inp)
