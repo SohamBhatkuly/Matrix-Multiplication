@@ -159,6 +159,7 @@ let multiply = () => {
         result.style.padding = "0.2rem";
         result.style.backgroundColor = "#E0E0E0 "
     result.style.margin = "1rem";
+    result.style.justifyItems = "center";
     
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < columns2; j++) {
@@ -170,13 +171,18 @@ let multiply = () => {
             //  colEntry.innerHTML = `<input type="number" class="input-values" id="${i}-${j}"></input>`
             // colEntry.style.border = "1px solid black";
             colEntry3.style.margin = '2px';
+            colEntry3.style.display = "flex";
+            colEntry3.style.justifyContent = "center";
+            colEntry3.style.alignItems = "center";
             colEntry3.style.borderRadius = "0.1rem"
             colEntry3.style.outline = "none";
             colEntry3.style.color = "#2c3e50"
-            colEntry3.style.width = "3rem";
+            colEntry3.style.width = "4rem";
+            colEntry3.style.height = "3rem";
+            colEntry3.style.fontSize = "1.6rem";
+            colEntry3.style.textAlign = "center";
             colEntry3.innerText = `${arr3[i][j]}`
             result.appendChild(colEntry3);
-            colEntry3.style.textAlign = "center";
         }
     }
     //  bodyDisplay2.innerHTML = ""; // Clear previous content
