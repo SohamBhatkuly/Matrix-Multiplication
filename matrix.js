@@ -214,7 +214,7 @@ let matrixInput = () => {
 
 let checkInp = () => {
     
-    if (columns != rows2) {
+    if ((columns != rows2 )|| (rows==undefined || columns==undefined)) {
         alert('Provide matrices of proper order to multiply');
         return;
     }
