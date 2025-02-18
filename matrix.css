@@ -103,6 +103,28 @@ h1 {
   height: 6rem;
 }
 
+@media (max-width: 310px) {
+  #input1,
+  #input2 {
+    width: 100%;
+  }
+}
+@media (max-width: 310px) {
+  .row-input {
+    height: 8rem;
+    gap: 1rem;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 310px) {
+.body-display {
+  margin-left: 1px;
+  width: 100%;
+}
+}
+
+
 .res {
   margin-left: 1rem;
   margin-bottom: 1rem;
@@ -208,7 +230,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .body-display {
-  margin-left: 2rem;
+  margin-left: 0.5rem;
+  width: 100%;
 }
 
 .matrix-info {
