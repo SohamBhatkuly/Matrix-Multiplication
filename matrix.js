@@ -12,60 +12,62 @@ form.addEventListener('input', (event) => {
     event.preventDefault();
     rows = document.getElementById('rows').value;
     columns = document.getElementById('columns').value;
-    let displayGrid = document.querySelector('.display-grid');
-    // console.log(rows, columns);
-    let root = document.getElementById('root');
-    if (root) {
-        root.innerHTML = ``;
-    }
-    else {
-        root = document.createElement('form');
-        root.setAttribute('id', 'root');
-        root.innerHTML = ``;
-        root.setAttribute('class', 'root');
-    }
 
-    if (rows>0 && columns>0) {
-        root.style.display = "grid";
-        root.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
-        root.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
-        root.style.columnGap = `1px`;
-        root.style.width = "max-content";
-        root.style.maxWidth = "900px";
-        // root.style.border = "1px solid black";
-        root.style.borderRadius = "0.5rem";
-        root.style.padding = "0.2rem";
-        root.style.backgroundColor = "#E0E0E0 "
-        root.style.marginBottom = "1rem";
-        // root.style.color="  color: #2c3e50"
-    }
+        let displayGrid = document.querySelector('.display-grid');
+        // console.log(rows, columns);
+        let root = document.getElementById('root');
+        if (root) {
+            root.innerHTML = ``;
+        }
+        else {
+            root = document.createElement('form');
+            root.setAttribute('id', 'root');
+            root.innerHTML = ``;
+            root.setAttribute('class', 'root');
+        }
 
-    // root.style.border= "1px solid black"
+        if (rows > 0 && columns > 0) {
+            root.style.display = "grid";
+            root.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+            root.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+            root.style.columnGap = `1px`;
+            root.style.width = "max-content";
+            root.style.maxWidth = "900px";
+            // root.style.border = "1px solid black";
+            root.style.borderRadius = "0.5rem";
+            root.style.padding = "0.2rem";
+            root.style.backgroundColor = "#E0E0E0 "
+            root.style.marginBottom = "1rem";
+            // root.style.color="  color: #2c3e50"
+        }
+
+        // root.style.border= "1px solid black"
    
 
-    for (let i = 0; i < rows; i++){
-        // let rowEntry = document.createElement('div');
-        // rowEntry.setAttribute('id', `${i}`);
-        for (let j = 0; j < columns; j++){
-        let colEntry = document.createElement('input');
-            colEntry.setAttribute('id', `${i}-${j}`);
-            colEntry.setAttribute('type', 'number');
-            colEntry.setAttribute('class', 'cells');
-            colEntry.style.backgroundColor = "#FFFFFF ";
-          //  colEntry.innerHTML = `<input type="number" class="input-values" id="${i}-${j}"></input>`
-            // colEntry.style.border = "1px solid black";
-            colEntry.style.margin = '2px';
-            colEntry.style.borderRadius = "0.1rem"
-            colEntry.style.outline = "none";
-            colEntry.style.color="#2c3e50"
-            root.appendChild(colEntry);
+        for (let i = 0; i < rows; i++) {
+            // let rowEntry = document.createElement('div');
+            // rowEntry.setAttribute('id', `${i}`);
+            for (let j = 0; j < columns; j++) {
+                let colEntry = document.createElement('input');
+                colEntry.setAttribute('id', `${i}-${j}`);
+                colEntry.setAttribute('type', 'number');
+                colEntry.setAttribute('class', 'cells');
+                colEntry.style.backgroundColor = "#FFFFFF ";
+                //  colEntry.innerHTML = `<input type="number" class="input-values" id="${i}-${j}"></input>`
+                // colEntry.style.border = "1px solid black";
+                colEntry.style.margin = '2px';
+                colEntry.style.borderRadius = "0.1rem"
+                colEntry.style.outline = "none";
+                colEntry.style.color = "#2c3e50"
+                root.appendChild(colEntry);
+            }
+            // root.appendChild(rowEntry);
         }
-        // root.appendChild(rowEntry);
+
+
+        displayGrid.append(root);
     }
-
-
-    displayGrid.append(root);
-})
+)
 
 
 
@@ -186,7 +188,13 @@ let multiply = () => {
         }
     }
     //  bodyDisplay2.innerHTML = ""; // Clear previous content
+    let backButton = document.createElement('a');
+    backButton.classList.add('back-button');
+    backButton.textContent = `←`;
+    backButton.setAttribute('href', 'index.html');
+    // result.appendChild(backButton);
     bodyDisplay2.appendChild(result);
+        bodyDisplay2.appendChild(backButton);
     bodyDisplay2.classList.add('res');
 }
 let matrixInput = () => {
